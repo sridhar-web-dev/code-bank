@@ -12,7 +12,7 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { ContactComponent } from './contact/contact.component';
 import { ButtonComponent } from './tutor/button/button.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
-import { DynamicBtnComponent } from './pages/code-bank/code-bank.component';
+import { DynamicBtnComponent } from './pages/dynamic-btn/dynamic-btn.component';
 
 @NgModule({
   declarations: [
