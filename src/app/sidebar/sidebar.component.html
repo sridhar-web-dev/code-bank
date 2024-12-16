@@ -1,0 +1,25 @@
+<nav class="sidebar d-none d-md-block">
+  <h4 class="text-dark bg-success text-center py-3">Menu</h4>
+  <div class="scroll" id="manualSidebar">
+    <!-- Links for desktop version -->
+    <a routerLink="dynamic-button" routerLinkActive="active">Dynamic Button</a>
+  </div>
+</nav>
+
+<!-- Mobile Version Offcanvas -->
+<div class="d-md-none">
+  <button class="btn btn-success w-100" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSidebar" aria-controls="offcanvasSidebar">
+    Menu
+  </button>
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasSidebar" aria-labelledby="offcanvasSidebarLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasSidebarLabel">Menu</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div id="mobileMenu" class="d-flex flex-column gap-3">
+        <!-- Mobile links will be dynamically populated here -->
+      </div>
+    </div>
+  </div>
+</div>

@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'dynamic-btn'`, () => {
+  it(`should have as title 'code-bank'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('dynamic-btn');
+    expect(app.title).toEqual('code-bank');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('dynamic-btn app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('code-bank app is running!');
   });
 });
