@@ -13,6 +13,8 @@ import { ContactComponent } from './contact/contact.component';
 import { ButtonComponent } from './tutor/button/button.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { DynamicBtnComponent } from './pages/dynamic-btn/dynamic-btn.component';
+import { ReactiveFormComponent } from './tutor/reactive-form/reactive-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,11 +28,12 @@ import { DynamicBtnComponent } from './pages/dynamic-btn/dynamic-btn.component';
     ContactComponent,
     ButtonComponent,
     SidebarComponent,
-    DynamicBtnComponent
+    DynamicBtnComponent,
+    ReactiveFormComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule, ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,99 @@
+<section class="from">
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+         
+        <div class="col-lg-6">
+          <h4 class="text-center mb-5">Form Validation Using Reactive Form</h4>
+          <div class="card px-3">
+            <div class="card-body">
+              <form [formGroup]="myform" (ngSubmit)="onSubmit()">
+                <div class="mb-3">
+                  <label for="name" class="form-label">Name</label>
+                  <input type="text" formControlName="name" name="name" id="name"
+                    class="form-control" aria-describedby="emailHelp" placeholder>
+                  <span class="error-message"
+                    *ngIf="myform.get('name')?.invalid && myform.get('name')?.touched">
+                   <div *ngIf="myform.get('name')?.errors?.['required']">The Name is required</div>
+                    <div *ngIf="myform.get('name')?.errors?.['pattern']">Only alphabetic characters are allowed.</div> 
+                  </span>
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email Address</label>
+                  <input type="email" formControlName="email" name="email"
+                    id="email" class="form-control" aria-describedby="emailHelp"
+                    placeholder>
+                  <span class="error-message"
+                    *ngIf="!myform.get('email')?.valid && myform.get('email')?.touched">
+                    <div *ngIf="myform.get('email')?.errors?.['required']">The email is required</div>
+                    <div *ngIf="myform.get('email')?.errors?.['pattern']">The Email is invalid.</div>
+                  </span>
+                </div>
+                <div class="mb-3">
+                  <label for="mobile" class="form-label">Mobile Number</label>
+                  <input type="mobile" formControlName="mobile" name="mobile" id="mobile" class="form-control" aria-describedby="emailHelp" placeholder>
+                  <div class="error-message"
+                    *ngIf="myform.get('mobile')?.invalid && myform.get('mobile')?.touched">
+                    <div *ngIf="myform.get('mobile')?.errors?.['required']">Mobile number is required.</div>
+                    <div *ngIf="myform.get('mobile')?.errors?.['pattern']">Only numeric values are allowed.</div>
+                    <div *ngIf="myform.get('mobile')?.errors?.['minlength']">Mobile number must be at least 10 digits.</div>
+                    <div *ngIf="myform.get('mobile')?.errors?.['maxlength']">Mobile number cannot exceed 15 digits.</div>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="services">Select Service:</label>
+                  <select id="services" formControlName="services"
+                    class="form-control">
+                    <option value>Select a Service</option>
+                    <option *ngFor="let option of options" [value]="option">{{ option }}</option>
+                  </select>
+                  <div class="error-message"  *ngIf="myform.get('services')?.invalid && myform.get('services')?.touched">
+                    <div *ngIf="myform.get('services')?.errors?.['required']">Selection is required.</div>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <div class="">
+                    <label>Gender:</label>
+                    <div *ngFor="let option of radioOptions" class="form-check form-check-inline">
+                      <label>
+                        <input type="radio" class="form-check-input" [value]="option" formControlName="radioGroup">{{ option }}
+                      </label>
+                    </div>
+                    <div *ngIf="!myform.get('radioGroup')?.valid && myform.get('radioGroup')?.touched">
+                      <div *ngIf="myform.get('radioGroup')?.errors?.['required']">Selection is required.</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="dateOfBirth">Date of Birth:</label>
+                  <input type="date" id="dateOfBirth" class="form-control" formControlName="dateOfBirth">
+                  <div class="error-message" *ngIf="myform.get('dateOfBirth')?.invalid && myform.get('dateOfBirth')?.touched">
+                    <div *ngIf="myform.get('dateOfBirth')?.errors?.['required']">Date of Birth is required.</div>
+                    <div *ngIf="myform.get('dateOfBirth')?.errors?.['invalidDate']">Enter a valid date (YYYY-MM-DD).</div>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="website">Website:</label>
+                  <input id="website" formControlName="website" class="form-control">
+                  <div class="error-message" *ngIf="myform.get('website')?.invalid && myform.get('website')?.touched">
+                    <div *ngIf="myform.get('website')?.errors?.['required']">Website URL is required.</div>
+                    <div *ngIf="myform.get('website')?.errors?.['pattern']">Enter a valid URL (e.g., http://example.com).</div>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="agreeTerms">
+                    <input type="checkbox" id="agreeTerms"
+                      formControlName="agreeTerms">
+                    I agree to the terms and conditions
+                  </label>
+                  <div class="error-message" *ngIf="myform.get('agreeTerms')?.invalid && myform.get('agreeTerms')?.touched">
+                    You must agree to the terms and conditions.
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-success w-100" [disabled]="myform.invalid">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

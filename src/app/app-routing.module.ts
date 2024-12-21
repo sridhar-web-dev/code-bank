@@ -6,6 +6,7 @@ import { ServiceComponent } from './service/service.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { ContactComponent } from './contact/contact.component';
 import { DynamicBtnComponent } from './pages/dynamic-btn/dynamic-btn.component';
+import { ReactiveFormComponent } from './tutor/reactive-form/reactive-form.component';
 
 const routes: Routes = [
   // For Router Examples
@@ -15,7 +16,8 @@ const routes: Routes = [
   {path: 'gallery', component:GalleryComponent},
   {path: 'contact', component:ContactComponent},
   // For Concept
-  {path: 'dynamic-button', component:DynamicBtnComponent}
+  {path: 'dynamic-button', component:DynamicBtnComponent},
+  {path: 'reactive-form', component: ReactiveFormComponent}
 ];
 
 @NgModule({

@@ -1,0 +1,18 @@
+.error-message
+{
+    color: red;
+    font-size: 14px;
+}
+
+.card
+{
+    border-radius: 20px;
+    border: none !important;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+label
+{
+    color: #000;
+    display: block;
+    font-weight: 500;
+}
